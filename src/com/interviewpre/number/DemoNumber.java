@@ -10,7 +10,7 @@ public class DemoNumber {
 		printNPrime(100);
 		System.out.println();
 		System.out.println("Sum of the digits is " + sumOfDigit(12345));
-
+		System.out.println("The Number is armstrong = " + isArmstrongNum(153));
 	}
 
 	private static void evenOrOdd(int num) {
@@ -84,16 +84,19 @@ public class DemoNumber {
 	}
 
 	private static boolean isArmstrongNum(int n) {
-		int count = 0, copy = n;
+		int count = 0, copy = n, sum = 0;
 		while (copy != 0) {
 			count++;
 			copy /= 10;
 		}
-		copy=n;
-		while(copy!=0) {
-			int rem=copy%10;
+		copy = n;
+		while (copy != 0) {
+			int rem = copy % 10;
+			sum += Math.pow(rem, count);
+			copy /= 10;
 		}
-		return false;
+		return sum == n;
 
 	}
+
 }
