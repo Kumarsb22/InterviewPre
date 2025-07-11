@@ -19,8 +19,26 @@ public class DemoNumber {
 		System.out.println("Binary count " + binaryCount(123401010));
 		quatRem(12, 4);
 		System.out.println(revStringUFor("I Love Myself"));
-		System.out.println(revStrinUWhileAndisStringPalindrom("gadag"));
+		System.out.println("is given string is palindrom = " + revStrinUWhileAndisStringPalindrom("gadag"));
+		System.out.println("Reversing the String without using the Loops "+revStriWiLoops("Kumar"));
+		isCharUpperCase('K');
+	}
+	
+	private static void isCharUpperCase(Character ch) {
+		if(Character.isUpperCase(ch))
+			System.out.println("Char is UpperCase");
+		
+		if(ch>='A' && ch<='Z')
+			System.out.println("Char is UpperCase");
+		
+		if(String.valueOf(ch).matches("[A-Z]"))
+			System.out.println("Char is UpperCase");	
+	}
 
+	private static String revStriWiLoops(String s) {
+		if (s == null || s.length() <= 1)
+			return s;
+		return revStriWiLoops(s.substring(1)) + s.charAt(0);
 	}
 
 	private static String revStringUFor(String s) {
@@ -40,13 +58,6 @@ public class DemoNumber {
 		}
 		System.out.println("Reversed the String using while loop " + builder.toString());
 		return builder.toString().equals(s2);
-	}
-
-	private static String revStriWiLoops(String s) {
-		char[] charArray = s.toCharArray();
-		int i = 0, j = s.length() - 1;
-
-		return s;
 	}
 
 	private static void quatRem(int a, int b) {
